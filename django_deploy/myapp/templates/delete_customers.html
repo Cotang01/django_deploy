@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Управление{% endblock %}
+
+{% block header %}Удаление товаров{% endblock %}
+
+{% block main %}
+<form method="post" action="{% url 'delete_customers' %}">
+    {% csrf_token %}
+    <ul>
+        {% for c in customers %}
+            <li>
+                <input type="checkbox" name="customers_to_delete" value="{{ c.id }}">
+                {{ c.name }} {{ c.email }} {{ c.phone }}
+            </li>
+        {% endfor %}
+    </ul>
+    <button type="submit">Удалить</button>
+</form>
+{% endblock %}

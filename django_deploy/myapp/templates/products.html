@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Товары{% endblock %}
+
+{% block header %}Список всех товаров{% endblock %}
+
+{% block main %}
+
+{% for p in products %}
+<hr/>
+{{ p.name }}<br/>
+{{ p.desc }}<br/>
+{{ p.price }}<br/>
+{{ p.quantity }}<br/>
+{{ p.publish_date }}<br/>
+<img src="{{ p.image.url }}" alt="{{ p.name }}" style="max-width: 200px;"><br/>
+<hr/>
+{% endfor %}
+
+{% endblock %}

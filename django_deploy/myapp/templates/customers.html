@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Покупатели{% endblock %}
+
+{% block header %}Список покупателей{% endblock %}
+
+{% block main %}
+{% for c in customers %}
+<hr/>
+{{ c.name }}<br/>
+{{ c.email }}<br/>
+{{ c.phone }}<br/>
+{{ c.address }}<br/>
+{{ c.registration_date }}<br/>
+<hr/>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+body {
+    font-family: times-new-roman;
+    font-size: 24px;
+    text-align: center;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+}

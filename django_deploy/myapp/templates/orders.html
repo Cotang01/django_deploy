@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Заказы{% endblock %}
+
+{% block header %}Список заказов{% endblock %}
+
+{% block main %}
+{% for o in orders %}
+<hr/>
+{{ o.customer }}<br/>
+{{ o.products }}<br/>
+{{ o.total_price }}<br/>
+{{ o.creation_date }}<br/>
+<hr/>
+{% endfor %}
+
+{% endblock %}

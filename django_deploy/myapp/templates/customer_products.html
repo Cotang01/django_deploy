@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Управление{% endblock %}
+
+{% block header %}Список товаров, заказанных пользователем{% endblock %}
+
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+    <label for="time_period">Показать товары за:</label>
+    <select name="time_period" id="time_period">
+        <option value="7">Последние 7 дней</option>
+        <option value="30">Последние 30 дней</option>
+        <option value="365">Последние 365 дней</option>
+    </select>
+    <button type="submit">Показать</button>
+</form>
+
+<h1>Заказанные товары покупателя {{ customer }} :</h1>
+<ul>
+    {% for p in ordered_products %}
+    <li>{{ p.name }} - {{ p.price }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

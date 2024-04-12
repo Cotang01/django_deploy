@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Управление{% endblock %}
+
+{% block header %}Создание заказа{% endblock %}
+
+{% block main %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Create">
+</form>
+{% endblock %}

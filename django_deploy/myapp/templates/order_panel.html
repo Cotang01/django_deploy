@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Управление{% endblock %}
+
+{% block header %}Управление заказами{% endblock %}
+
+{% block main %}
+    <ul>
+        <li>
+            <a href="{% url 'show_orders' %}">Показать все заказы</a>
+            <br/>
+            <a href="{% url 'create_order' %}">Создать заказ</a>
+            <br/>
+            <a href="{% url 'delete_orders' %}">Удалить заказы</a>
+            <br/>
+        </li>
+    </ul>
+{% endblock %}
